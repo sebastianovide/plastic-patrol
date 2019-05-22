@@ -1,6 +1,14 @@
 import React from 'react';
 import EventIcon from '@material-ui/icons/Event';
 
+import AccountCircleIcon from '@material-ui/icons/AccountCircle';
+import CheckCircleIcon from '@material-ui/icons/CheckCircle';
+import SchoolIcon from '@material-ui/icons/School';
+import DashboardIcon from '@material-ui/icons/Dashboard';
+import HelpIcon from '@material-ui/icons/Help';
+import FeedbackIcon from '@material-ui/icons/Feedback';
+import LibraryBooksIcon from '@material-ui/icons/LibraryBooks';
+
 import styles from './config.scss';
 import enums from '../types/enums';
 import TitleTextField from '../components/PhotoPage/TitleTextField';
@@ -81,6 +89,14 @@ const PAGES = {
     label: "Feedback",
     visible: (user, online) => true,
     icon: <FeedbackIcon/>,
+  },
+  events: {
+      path: "/events",
+      label: "Clean-ups"
+  },
+  partners: {
+      path: "/partners",
+      label: "Partners"
   },
   leaderboard: {
     path: "/leaderboard",
