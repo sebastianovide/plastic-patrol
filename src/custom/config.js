@@ -54,35 +54,47 @@ const PAGES = {
   },
   moderator: {
     path: "/moderator",
-    label: "Photo Approval"
+    label: "Photo Approval",
+    icon: <CheckCircleIcon/>,
+    visible: (user, online) => user && user.isModerator
   },
   account: {
     path: "/account",
-    label: "Account"
+    label: "Account",
+    icon: <AccountCircleIcon/>,
+    visible: (user, online) => user
   },
   about: {
     path: "/about",
-    label: "About"
+    label: "About",
+    visible: (user, online) => true,
+    icon: <HelpIcon/>,
   },
   tutorial: {
     path: "/tutorial",
-    label: "Tutorial"
+    label: "Tutorial",
+    visible: (user, online) => true,
+    icon: <SchoolIcon/>,
   },
   writeFeedback: {
     path: "/write-feedback",
-    label: "Feedback"
+    label: "Feedback",
+    visible: (user, online) => true,
+    icon: <FeedbackIcon/>,
   },
-  events: {
-    path: "/events",
-    label: "Clean-ups"
+  leaderboard: {
+    path: "/leaderboard",
+    label: "Leaderboard",
+    visible: (user, online) => true,
+    icon: <DashboardIcon/>,
   },
-  partners: {
-    path: "/partners",
-    label: "Partners"
-  },
+  feedbackReports: {
+    path: "/feedback-reports",
+    label: "Feedback Reports",
+    icon: <LibraryBooksIcon/>,
+    visible: (user, online) => user && user.isModerator
+  }
 };
-
-const customiseString = (page, key) => (CUSTOM_STRING[page][key] || key);
 
 const getStats = async (photos) => {
   let totalPieces = 0;
@@ -96,6 +108,7 @@ const getStats = async (photos) => {
 }
 
 export default {
+  CUSTOM_STRING,
   MAX_IMAGE_SIZE: 2048,
   THEME: {
     typography: {
@@ -177,10 +190,13 @@ export default {
       click: () => window.location = 'https://plasticpatrol.co.uk/clean-ups/'
     },
   ],
-  customiseString,
   getStats,
   ENABLE_GRAVATAR_PROFILES: true,  //To update user-profile from Gravatar, value: ture or false.
   SECURITY: {
     UPLOAD_REQUIRES_LOGIN: true
+  },
+  API: {
+    URL: "https://app.plasticpatrol.co.uk/api",
+    // URL: "http://localhost:5000/photos-demo-d4b14/us-central1/api"
   }
 }
