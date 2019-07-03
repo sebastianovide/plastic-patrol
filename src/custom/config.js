@@ -48,7 +48,8 @@ const CUSTOM_STRING = {
     "Privacy Policy": "Privacy Policy ",
     "T&C link": "https://plasticpatrol.co.uk/terms-and-conditions/",
     "Privacy Policy Link": "https://plasticpatrol.co.uk/privacy-policy/"
-  }
+  },
+  tweetMessage: "Photo in the showing link will be tweeted"
 };
 
 const PAGES = {
