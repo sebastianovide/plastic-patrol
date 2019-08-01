@@ -17,7 +17,7 @@ import utils from '../utils';
 import './DrawerContainer.scss';
 import { isIphoneWithNotchAndCordova, isIphoneAndCordova } from '../utils';
 
-const placeholderImage = process.env.PUBLIC_URL + "/images/geovation-banner.svg";
+const placeholderImage = process.env.PUBLIC_URL + "/images/REN-logo.png";
 const drawerWidth = '80%';
 const drawerMaxWidth = 360;
 
@@ -107,7 +107,7 @@ class DrawerContainer extends Component {
         <Typography className={classes.stats} color={'secondary'}>
           {`${stats | 0} ${utils.customiseString('drawer', 'photos published so far!')}`}
         </Typography>
-        <div className='built-by-geovation'>
+        <div className='built-by-sponsorlogo'>
           <Typography className='built-by-text'>
             Built by
           </Typography>
