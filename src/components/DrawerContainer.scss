@@ -18,20 +18,34 @@
     }
   }
 
-  .built-by-sponsorlogo {
+  .DrawerContainer-stats-95 {
+    padding-bottom: 10px;
+  }
+
+  .built-by-geovation, .sponsored-by {
     display: flex;
     flex: 1;
     align-items: flex-end;
     justify-content: center;
+  }
+
+  .built-by-geovation {
     padding-bottom: 35px;
+  }
+
+  .sponsored-by {
+    padding: 0px;
+  }
+
+  .sponsor-logo {
+    height: 30px;
   }
 
   .built-by-text {
     padding-right: 10px;
-    height: 30px;
   }
 
   .built-by-img {
-    height: 30px
+    height: 20px
   }
 }
