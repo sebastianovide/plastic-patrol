@@ -18,7 +18,7 @@ import './DrawerContainer.scss';
 import { isIphoneWithNotchAndCordova, isIphoneAndCordova } from '../utils';
 
 const placeholderImage = process.env.PUBLIC_URL + "/images/geovation-banner.svg";
-const sponsorImage = process.env.PUBLIC_URL + "/images/REN-logo.png";
+const sponsorImage = process.env.PUBLIC_URL + "/custom/images/sponsor-logo.png";
 const drawerWidth = '80%';
 const drawerMaxWidth = 360;
 
