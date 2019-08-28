@@ -18,7 +18,6 @@ import './DrawerContainer.scss';
 import { isIphoneWithNotchAndCordova, isIphoneAndCordova } from '../utils';
 
 const placeholderImage = process.env.PUBLIC_URL + "/images/geovation-banner.svg";
-const sponsorImage = process.env.PUBLIC_URL + "/custom/images/sponsor-logo.png";
 const drawerWidth = '80%';
 const drawerMaxWidth = 360;
 
@@ -51,7 +50,7 @@ const links = {
 class DrawerContainer extends Component {
 
   render() {
-    const { classes, user, online, leftDrawerOpen, stats } = this.props;
+    const { classes, user, online, leftDrawerOpen, stats, sponsorImage } = this.props;
     const ListItemsTop = [
       PAGES.account,
       PAGES.moderator,
