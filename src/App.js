@@ -290,14 +290,18 @@ class App extends Component {
           this.setState({ geojson, stats });
           this.featuresDict = geojson.features;
         } else {
-          dbFirebase.fetchPhotos().then(photos => {
-            _.forEach(photos, photo => {
-              this.addFeature(photo);
-            });
-          });
+          this.fetchPhotos();
         }
       })
       .catch(console.error);
+  }
+
+  fetchPhotos() {
+    dbFirebase.fetchPhotos().then(photos => {
+      _.forEach(photos, photo => {
+        this.addFeature(photo);
+      });
+    });
   }
 
   async componentWillUnmount() {
@@ -623,6 +627,15 @@ class App extends Component {
     this.props.history.push(`${pathname}@${coordsUrl}`);
   };
 
+  reloadPhotos = () => {
+    // delete photos.
+    this.featuresDict = {};
+
+    // it will open the "loading photos" message
+    this.setState({ geojson: null }); 
+    this.fetchPhotos();
+  };
+
   render() {
     const { fields, config, history } = this.props;
     return (
@@ -664,6 +677,7 @@ class App extends Component {
                   {...props}
                   label={this.props.config.PAGES.about.label}
                   handleClose={history.goBack}
+                  reloadPhotos={this.reloadPhotos}
                 />
               )}
             />
